@@ -1,0 +1,11 @@
+package Bai6;
+
+import java.text.DecimalFormat;
+
+public class MoMoPayment implements PaymentMethod {
+    @Override
+    public void pay(double amount) {
+        DecimalFormat df = new DecimalFormat("#,###");
+        System.out.println("Thanh toán MoMo: " + df.format(amount));
+    }
+}
