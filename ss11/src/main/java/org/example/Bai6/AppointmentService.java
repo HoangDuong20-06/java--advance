@@ -16,4 +16,18 @@ public class AppointmentService {
     public void delete(int id) {
         dao.delete(id);
     }
+    public void update(Appointment a) {
+        dao.update(a);
+    }
+    public void findById(int id) {
+        Appointment a = dao.getById(id);
+
+        if (a != null) {
+            System.out.println(a.getId() + " | "
+                    + a.getPatientName() + " | "
+                    + a.getAppointmentDate() + " | "
+                    + a.getDoctorName() + " | "
+                    + a.getStatus());
+        }
+    }
 }
