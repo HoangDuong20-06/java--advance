@@ -12,12 +12,9 @@ public class Pharmacy {
         try {
             conn = DBContext.getConnection();
             System.out.println("=== Pharmacy List ===");
-
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM pharmacy");
-
             boolean hasData = false;
-
             while (rs.next()) {
                 hasData = true;
 
@@ -30,7 +27,6 @@ public class Pharmacy {
             if (!hasData) {
                 System.out.println("The medicine warehouse is empty!");
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

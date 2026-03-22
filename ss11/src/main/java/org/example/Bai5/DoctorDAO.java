@@ -23,19 +23,19 @@ public class DoctorDAO {
         return list;
     }
     public void addDoctor(Doctor doctor) {
-//        String sql = "INSERT INTO doctors(id, name, specialty) VALUES (?, ?, ?)";
-//        try (Connection conn = DBContext.getConnection();
-//             PreparedStatement ps = conn.prepareStatement(sql)) {
-//            ps.setInt(1, doctor.getId());
-//            ps.setString(2, doctor.getName());
-//            ps.setString(3, doctor.getSpecialty());
-//            ps.executeUpdate();
-//            System.out.println("Success Add!");
-//        } catch (SQLIntegrityConstraintViolationException e) {
-//            System.out.println("Same id doctor!");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        String sql = "INSERT INTO doctors(id, name, specialty) VALUES (?, ?, ?)";
+        try (Connection conn = DBContext.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, doctor.getId());
+            ps.setString(2, doctor.getName());
+            ps.setString(3, doctor.getSpecialty());
+            ps.executeUpdate();
+            System.out.println("Success Add!");
+        } catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println("Same id doctor!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     public void statisticBySpecialty() {
         String sql = "SELECT specialty, COUNT(*) AS total FROM doctors GROUP BY specialty";

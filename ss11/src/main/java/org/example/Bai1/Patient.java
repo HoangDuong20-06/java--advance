@@ -11,10 +11,8 @@ public class Patient {
 
         try {
             conn = DBContext.getConnection();
-
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM users");
-
             while (rs.next()) {
                 System.out.println(
                         rs.getInt("id") + " - " +
