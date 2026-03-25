@@ -1,0 +1,32 @@
+1. Phân tích bài toán (I/O)
+Input:
+maBenhNhan (String / int)
+vienPhi (double / decimal)
+Output:
+Thành công: “Thanh toán thành công”
+Thất bại:
+“Không đủ tiền” (bẫy 1)
+“Bệnh nhân không tồn tại” (bẫy 2)
+⚙️ 2. Đề xuất giải pháp
+Dùng Connection + setAutoCommit(false)
+Bao toàn bộ xử lý trong try-catch
+Kiểm tra:
+Nếu số dư < viện phí → throw Exception
+Nếu executeUpdate() == 0 → throw Exception
+Khi có lỗi:
+rollback()
+Khi thành công:
+ commit()
+ 3. Thiết kế các bước xử lý
+Mở kết nối DB
+setAutoCommit(false)
+Lấy số dư bệnh nhân
+Kiểm tra:
+Nếu không đủ tiền → throw Exception
+Trừ tiền
+Cập nhật trạng thái (giường/bệnh nhân)
+Kiểm tra:
+Nếu rowAffected == 0 → throw Exception
+Nếu OK hết → commit()
+Nếu lỗi → rollback()
+Đóng kết nối

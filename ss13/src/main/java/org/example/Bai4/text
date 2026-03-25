@@ -1,0 +1,18 @@
+1. Phân tích Input / Output
+
+Input:
+
+Có thể có filter (ngày, trạng thái…)
+Số lượng khoảng 500 bệnh nhân
+
+Output:
+
+Danh sách bệnh nhân
+Thông tin bệnh nhân
+Danh sách dịch vụ/thuốc (có thể rỗng)
+Không được thiếu bệnh nhân
+Không được lỗi NullPointerException
+2. Đề xuất giải pháp
+Giải pháp 1: LEFT JOIN
+
+Giải pháp 2: 2 query + xử lý bằng Java

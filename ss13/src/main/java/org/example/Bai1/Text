@@ -1,0 +1,2 @@
+Vì JDBC mặc định Auto-Commit = TRUE, nên mỗi câu SQL tự commit riêng
+nên khi lỗi xảy ra giữa chừng thì các câu trước đã commit rồi, không rollback được

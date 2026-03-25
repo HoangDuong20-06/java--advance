@@ -1,0 +1,5 @@
+Vì System.out.println() chỉ in lỗi mà không khôi phục dữ liệu,
+nên khi xảy ra lỗi giữa transaction, dữ liệu đã thay đổi trước đó vẫn giữ nguyên sẽ
+vi phạm Atomicity (không “all or nothing”).
+Hành động bị bỏ quên:
+rollback() – dùng để hủy toàn bộ transaction khi có SQLException.
